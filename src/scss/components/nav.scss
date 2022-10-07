@@ -2,6 +2,7 @@
     &--sidebar {
         .nav__list {
             flex-direction: column;
+            gap: 2px;
         }
 
         .nav__link {
@@ -30,7 +31,9 @@
                         #b645ef 0%,
                         #cb0c9f 100%
                     );
-                    color: rgba(255, 255, 255, 0.8);
+                    i {
+                        color: rgba(255, 255, 255, 0.8);
+                    }
                 }
             }
         }
@@ -72,6 +75,7 @@
 
             i {
                 font-size: 11px;
+                color: #67748e;
             }
         }
 
@@ -88,7 +92,7 @@
 
     &__list {
         display: flex;
-        gap: 1px;
+        gap: 15px;
 
         font-family: 'Inter', sans-serif;
         font-size: 14px;
@@ -99,8 +103,12 @@
         display: flex;
         align-items: center;
 
-        img + span {
-            margin-left: 15px;
+        i + span {
+            margin-left: 10px;
+        }
+
+        i {
+            color: #67748e;
         }
     }
 }
