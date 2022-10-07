@@ -7,15 +7,211 @@
 })
 
 <body>
-    <!-- header include -->
-    @@include('html/partials/header.html')
 
-    <!-- main -->
-    <main>
+    <div class="wrapper">
+        <!-- header include -->
+        @@include('html/partials/header.html')
 
-    </main>
-    <!-- footer include -->
-    @@include('html/partials/footer.html')
+        <aside class="sidebar">
+            <nav class="nav nav--sidebar">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/cart.png" alt="тележка">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Выкупы</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">35</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/truck.png" alt="грузовик">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Доставка</span>
+                                <p class="nav__item-desk">
+                                    Информация бесплатно!
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/cloud.png" alt="облако">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Отзывы</span>
+                                <p class="nav__item-desk">
+                                    Акция! Отзывы бесплатно!
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/like.png" alt="лайк">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Лайки на отзывы</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">3</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/heart.png" alt="сердце">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Избранное</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">5</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/question.png" alt="вопрос">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Вопросы</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">5</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/eye.png" alt="глаз">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Просмотры</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">1</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/basket.png" alt="корзина">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Корзина</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">2</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="nav__item-image">
+                                <img src="img/sidebar/heart-hand.png" alt="рука и сердце">
+                            </div>
+                            <div class="nav__item-text">
+                                <span class="nav__item-title">Лайки на бренд</span>
+                                <p class="nav__item-desk">
+                                    Цена: <span class="nav__item-desk-price">5</span> руб./шт.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- main -->
+        <main class="main">
+            <div class="main__top">
+                <ul class="tabs">
+                    <li class="tabs__item">
+                        Все выкупы
+                    </li>
+                    <li class="tabs__item">
+                        Активные
+                    </li>
+                    <li class="tabs__item">
+                        Завершенные
+                    </li>
+                    <li class="tabs__item">
+                        Архив
+                    </li>
+                </ul>
+
+                <button type="button" class="btn">Добавить выкупы</button>
+            </div>
+
+            <div class="main__content">
+
+                <div class="main__cards-list">
+                    <article class="card">
+                        <button class="settings-btn">
+                            <span class="settings-btn__item"></span>
+                            <span class="settings-btn__item"></span>
+                            <span class="settings-btn__item"></span>
+                        </button>
+                        <header class="card__header">
+                            <h2 class="card__title">Группа №765</h2>
+                            <div class="card__info">
+                                <div class="card__info-status">
+                                    <span class="card__status active">Активный</span>
+                                    <span class="card__creation-date">25 сентября 18:45</span>
+                                </div>
+
+
+                                <div class="card__payment">
+                                    <span>Оплачено:</span> 0 ₽ / 14 657 ₽
+                                </div>
+                                <div class="card__complete-order">
+                                    <span>Завершено заказов:</span> 0 шт. / 1 шт.
+                                </div>
+
+                            </div>
+
+                            <div class="card__goods">
+                                <div class="card__goods-item">
+                                    <div class="card__goods-item-image">
+
+                                    </div>
+                                    <h4 class="card__goods-item-title">
+                                        Ollin Professional / Крем-спрей...
+                                    </h4>
+
+                                    <span class="card__goods-item-article">Арт: 6583968</span>
+                                </div>
+                            </div>
+
+                        </header>
+                    </article>
+                    <article class="card">
+
+                    </article>
+                    <article class="card">
+
+                    </article>
+                </div>
+            </div>
+
+        </main>
+        <!-- footer include -->
+        @@include('html/partials/footer.html')
+    </div>
 
     <!-- scripts -->
     <script src="js/script.min.js"></script>

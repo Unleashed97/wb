@@ -14,9 +14,47 @@
 }
 
 body {
-    font-family: '', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+
+    background-color: $primary;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+.wrapper {
+    display: grid;
+    padding: 0 25px;
+    grid-template-areas:
+        'header header'
+        'aside main';
+
+    grid-template-columns: 330px 1fr;
 }
 
 // components
 @import 'components/header.scss';
+@import 'components/nav.scss';
+@import 'components/sidebar.scss';
+@import 'components/main.scss';
+@import 'components/btn.scss';
+@import 'components/tabs.scss';
+@import 'components/card.scss';
+@import 'components/settings-btn.scss';
 @import 'components/footer.scss';

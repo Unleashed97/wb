@@ -1,0 +1,101 @@
+.nav {
+    &--sidebar {
+        .nav__list {
+            flex-direction: column;
+        }
+
+        .nav__link {
+            padding: 10px;
+
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            border-radius: 15px;
+
+            transition: background-color 0.3s linear;
+
+            &:hover,
+            &.active {
+                background-color: #fff;
+
+                .nav__item-image {
+                    border-color: #e15959;
+                }
+
+                .nav__item-image::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .nav__item-image {
+            position: relative;
+            z-index: 1;
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 12px;
+            border: 1px solid #000;
+
+            overflow: hidden;
+
+            transition: border-color 0.3s linear, background 0.3s linear;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+
+                width: 100%;
+                height: 100%;
+
+                background: linear-gradient(
+                    180deg,
+                    #e15959 0%,
+                    rgba(167, 0, 170, 0.54) 54%,
+                    rgba(167, 0, 170, 0.62) 78%,
+                    rgba(167, 0, 170, 0.89) 100%
+                );
+
+                opacity: 0;
+
+                transition: opacity 0.3s linear;
+            }
+        }
+
+        .nav__item-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav__item-desk {
+            font-size: 15px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 15px;
+
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        color: #000;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        img + span {
+            margin-left: 15px;
+        }
+    }
+}
