@@ -11,6 +11,7 @@
 
     border: 1px solid #000;
     border-radius: 15px;
+    background-color: #fff;
 
     &__title {
         font-size: 27px;
@@ -109,5 +110,7 @@
 
         border: 1px solid #695cfe;
         border-radius: 20px;
+
+        background-color: rgba(#adadad, 30%);
     }
 }
