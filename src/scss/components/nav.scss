@@ -5,20 +5,22 @@
         }
 
         .nav__link {
+            width: 218px;
+
             padding: 10px;
 
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 12px;
 
-            border-radius: 15px;
+            border-radius: 8px;
 
             transition: background-color 0.3s linear, box-shadow 0.3s linear;
 
             &:hover,
             &.active {
                 background-color: #fff;
-                box-shadow: 0 0 5px 2px rgba(#000, 0.3);
+                box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 
                 .nav__item-image {
                     border-color: #e15959;
@@ -34,19 +36,19 @@
             position: relative;
             z-index: 1;
 
-            width: 50px;
-            height: 50px;
+            width: 32px;
+            height: 32px;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            border-radius: 12px;
-            border: 1px solid #000;
+            border-radius: 8px;
 
+            box-shadow: 1px 2px 2px rgba(#141414, 0.3);
             overflow: hidden;
 
-            transition: border-color 0.3s linear, background 0.3s linear;
+            transition: background 0.3s linear;
 
             &::before {
                 content: '';
@@ -57,17 +59,15 @@
                 width: 100%;
                 height: 100%;
 
-                background: linear-gradient(
-                    180deg,
-                    #e15959 0%,
-                    rgba(167, 0, 170, 0.54) 54%,
-                    rgba(167, 0, 170, 0.62) 78%,
-                    rgba(167, 0, 170, 0.89) 100%
-                );
+                background: linear-gradient(310deg, #b645ef 0%, #cb0c9f 100%);
 
                 opacity: 0;
 
                 transition: opacity 0.3s linear;
+            }
+
+            img {
+                max-width: 12px;
             }
         }
 
@@ -78,17 +78,17 @@
         }
 
         .nav__item-desk {
-            font-size: 15px;
+            font-size: 10px;
         }
     }
 
     &__list {
         display: flex;
-        gap: 15px;
+        gap: 1px;
 
         font-family: 'Inter', sans-serif;
-        font-size: 20px;
-        color: #000;
+        font-size: 14px;
+        color: #344767;
     }
 
     &__link {
