@@ -1,0 +1,22 @@
+// normalize css
+@import 'vendor/normalize.scss';
+
+// vars
+@import 'vars.scss';
+
+// fonts
+@import 'fonts.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: '', sans-serif;
+}
+
+// components
+@import 'components/header.scss';
+@import 'components/footer.scss';
