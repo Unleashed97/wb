@@ -31,21 +31,21 @@
 
     &__cards-list {
         display: grid;
-        grid-template-columns: repeat(4, 350px);
+        grid-template-columns: repeat(4, 309px);
         grid-auto-rows: auto;
         gap: 30px;
 
         padding: 0 30px;
 
-        @media (max-width: 1920px) {
-            grid-template-columns: repeat(3, 350px);
+        @media (max-width: 1919px) {
+            grid-template-columns: repeat(3, 309px);
         }
 
         @media (max-width: 1500px) {
-            grid-template-columns: repeat(2, 350px);
+            grid-template-columns: repeat(2, 309px);
         }
         @media (max-width: 1100px) {
-            grid-template-columns: repeat(1, 350px);
+            grid-template-columns: repeat(1, 309px);
         }
 
         @media (max-width: $sm) {
