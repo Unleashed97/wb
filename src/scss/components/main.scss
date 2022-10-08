@@ -35,8 +35,6 @@
         grid-auto-rows: auto;
         gap: 30px;
 
-        padding: 0 30px;
-
         @media (max-width: 1919px) {
             grid-template-columns: repeat(3, 309px);
         }
@@ -48,8 +46,8 @@
             grid-template-columns: repeat(1, 309px);
         }
 
-        @media (max-width: $sm) {
-            padding: 0;
+        @media (max-width: $md) {
+            place-content: center;
         }
     }
 }
