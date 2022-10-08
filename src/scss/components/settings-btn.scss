@@ -1,11 +1,12 @@
 .settings-btn {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 23px;
+    right: 10px;
     z-index: 1;
 
-    width: 21px;
-    height: 21px;
+    width: 31px;
+    height: 31px;
+    padding: 10px;
     padding: 0;
 
     display: flex;
@@ -17,14 +18,27 @@
     background: none;
     outline: none;
     border: 0;
+    border-radius: 8px;
 
     cursor: pointer;
+
+    transition: background-color 0.3s linear;
+
+    &:hover {
+        background-color: rgba(#cb0c9f, 0.1);
+
+        .settings-btn__item {
+            background-color: #cb0c9f;
+        }
+    }
 
     &__item {
         width: 5px;
         height: 5px;
 
-        border: 1px solid rgba(#000, 50%);
         border-radius: 50%;
+        background-color: #e7ebef;
+
+        transition: background-color 0.3s linear;
     }
 }

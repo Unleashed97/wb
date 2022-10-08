@@ -6,7 +6,7 @@
         }
 
         .nav__link {
-            width: 218px;
+            width: 100%;
 
             padding: 10px;
 
@@ -107,8 +107,18 @@
             margin-left: 10px;
         }
 
+        &:hover {
+            color: #cb0c9f;
+
+            i {
+                color: inherit;
+            }
+        }
+
         i {
             color: #67748e;
+
+            transition: color 0.3s linear;
         }
     }
 }

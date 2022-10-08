@@ -2,15 +2,12 @@
     grid-area: header;
 
     &__inner {
+        position: relative;
         display: flex;
 
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
 
-        padding: 20px 160px 20px 0;
-    }
-
-    &__logo {
-        width: 160px;
+        padding: 20px 0;
     }
 }

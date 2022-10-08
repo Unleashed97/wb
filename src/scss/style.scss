@@ -48,17 +48,35 @@ img {
 }
 
 .wrapper {
-    display: grid;
-    padding: 0 25px;
-    grid-template-areas:
-        'header header'
-        'aside main';
+    position: relative;
 
-    grid-template-columns: 300px 1fr;
+    display: grid;
+    grid-template-areas:
+        'aside header'
+        'aside main'
+        'footer footer';
+
+    grid-template-columns: 300px minmax(0, 1620px);
+    place-content: center;
+
+    @media (max-width: $md) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
+    }
+}
+
+// fixed
+.fixed {
+    position: fixed;
 }
 
 // components
+@import 'components/container.scss';
 @import 'components/header.scss';
+@import 'components/burger.scss';
 @import 'components/nav.scss';
 @import 'components/sidebar.scss';
 @import 'components/main.scss';

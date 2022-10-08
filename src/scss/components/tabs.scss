@@ -2,6 +2,11 @@
     display: flex;
     gap: 40px;
 
+    @media (max-width: $sm) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     &__item {
         font-family: 'Open Sans', sans-serif;
         font-size: 15px;
@@ -13,7 +18,8 @@
 
         transition: color 0.3s linear, text-shadow 0.1s linear;
 
-        &:hover {
+        &:hover,
+        &.active:hover {
             color: #cb0c9f;
         }
         &.active {
