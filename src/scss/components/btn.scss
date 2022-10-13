@@ -1,22 +1,101 @@
 .btn {
-    width: 168px;
-    height: 40px;
-
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 16px;
     font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
+    color: rgba(#000, 50%);
 
-    background-image: linear-gradient(310deg, #7928ca 0%, #ff0080 100%);
+    display: flex;
+    align-items: center;
+
+    background: none;
+
     border: 0;
     border-radius: 8px;
-
     cursor: pointer;
 
     transition: 0.2s linear;
 
     &:hover {
-        box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+        color: #cb0c9f;
+
+        svg {
+            stroke: #cb0c9f;
+        }
+    }
+
+    svg {
+        margin-right: 7px;
+    }
+
+    &--grad {
+        width: fit-content;
+        height: 40px;
+
+        padding: 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #fff;
+        font-size: 16px;
+
+        background: linear-gradient(310deg, #7928ca 0%, #ff0080 100%);
+
+        transition: 0.2s linear;
+
+        &:hover {
+            box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+            color: #fff;
+        }
+    }
+
+    &--purple {
+        width: fit-content;
+        height: fit-content;
+
+        padding: 13px 12px;
+        background: $purple;
+        color: #fff;
+
+        text-transform: none;
+
+        border-radius: 15px;
+
+        transition: 0.2s linear;
+
+        &:hover {
+            box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+            color: #fff;
+        }
+    }
+
+    &--add {
+        width: 142px;
+        height: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 13px;
+        font-weight: 400;
+        color: #005694;
+
+        background-color: #d9e6ff;
+        border-radius: 11px;
+    }
+
+    &--outline {
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #7454b3;
+
+        background-color: #e6e6e6;
+        border-radius: 15px;
     }
 }

@@ -26,6 +26,22 @@
         }
     }
 
+    &__header {
+        max-width: 693px;
+    }
+
+    &__title {
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &__subtitle {
+        color: rgba(#000, 50%);
+        font-weight: 700;
+        font-size: 18px;
+    }
+
     &__content {
     }
 

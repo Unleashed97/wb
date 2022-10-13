@@ -49,6 +49,7 @@ img {
 
 .wrapper {
     position: relative;
+    min-height: 100vh;
 
     display: grid;
     grid-template-areas:
@@ -57,7 +58,7 @@ img {
         'footer footer';
 
     grid-template-columns: 300px minmax(0, 1620px);
-    place-content: center;
+    grid-template-rows: 57px 1fr 60px;
 
     @media (max-width: $md) {
         grid-template-columns: 1fr;
@@ -83,5 +84,10 @@ img {
 @import 'components/btn.scss';
 @import 'components/tabs.scss';
 @import 'components/card.scss';
+@import 'components/controls.scss';
+@import 'components/vykup.scss';
+@import 'components/amount.scss';
+@import 'components/gender.scss';
+@import 'components/modal.scss';
 @import 'components/settings-btn.scss';
 @import 'components/footer.scss';

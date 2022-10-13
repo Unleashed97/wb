@@ -1,0 +1,40 @@
+.controls {
+    margin-bottom: 52px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__form {
+        display: flex;
+    }
+
+    &__form-input {
+        padding: 13px 120px 13px 14px;
+
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+
+        border-radius: 15px;
+        border: 0;
+
+        background-color: #f5f5f5;
+
+        &::placeholder {
+            color: rgba(#000, 50%);
+        }
+    }
+
+    &__form-btn-add {
+        margin-left: -107px;
+    }
+
+    &__form-btn-plus {
+        margin-left: 10px;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 15px;
+    }
+}

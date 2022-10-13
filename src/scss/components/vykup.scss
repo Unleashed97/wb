@@ -1,0 +1,126 @@
+.vykup {
+    &__empty-list {
+        max-width: 250px;
+
+        display: none;
+        flex-direction: column;
+        margin: 0 auto;
+
+        &.active {
+            display: flex;
+        }
+
+        img {
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__empty-list-title {
+        margin-bottom: 20px;
+
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__empty-list-text {
+        font-size: 14px;
+        color: rgba(#000, 50%);
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    &__list-wrapper {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__list-top {
+        .vykup__list-item {
+            padding: 0 25px;
+
+            place-items: normal;
+
+            font-size: 16px;
+            font-weight: 700;
+            color: rgba(#000, 50%);
+
+            border-bottom: 1px solid rgba(#000, 50%);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+
+        .vykup__list-item {
+            padding: 12px 25px;
+
+            border-bottom: 1px solid rgba(#000, 50%);
+        }
+    }
+
+    &__list-item {
+        display: grid;
+
+        font-size: 13px;
+        font-weight: 400;
+
+        grid-template-columns: 50px 70px 45px 338px 105px 70px 142px 190px 142px 15px 15px;
+        gap: 34px;
+        place-items: center;
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    &__list-item-name {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__list-item-search-query {
+        height: 30px;
+        padding: 6px 8px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+
+        background-color: #dbdade;
+        border: 0;
+        border-radius: 11px;
+
+        &::placeholder {
+            color: rgba(#000, 50%);
+        }
+    }
+
+    &__list-item-copy-btn {
+        margin-left: -30px;
+    }
+
+    &__list-item-remove-btn {
+        margin-left: -60px;
+    }
+
+    &__list-bottom {
+        margin-top: 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list-bottom-price {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}

@@ -1,0 +1,36 @@
+.gender {
+    width: 142px;
+    height: 30px;
+
+    padding: 1px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #dbdade;
+    border-radius: 11px;
+
+    button {
+        width: 42px;
+        height: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 400;
+        font-size: 13px;
+
+        color: #000;
+
+        border-radius: 11px;
+
+        transition: 0.2s linear;
+
+        &:hover,
+        &.active {
+            background-color: #fff;
+        }
+    }
+}

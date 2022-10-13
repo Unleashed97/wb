@@ -1,0 +1,32 @@
+.amount {
+    width: 100px;
+    height: 30px;
+    padding: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+
+    background-color: #dbdade;
+
+    border-radius: 11px;
+
+    button {
+        width: 25px;
+        height: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 11px;
+        transition: 0.2s linear;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}

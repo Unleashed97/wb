@@ -106,29 +106,31 @@ export const styles = () => {
 }
 
 export const scripts = () => {
-    return gulp
-        .src(path.src.js)
-        .pipe(
-            plumber({
-                errorHandler: function (err) {
-                    notify.onError({
-                        title: 'JS Error',
-                        message: 'Error: <%= error.message %>',
-                    })(err)
-                    this.emit('end')
-                },
-            }),
-        )
-        .pipe(
-            webpack({
-                mode: isBuild ? 'production' : 'development',
-                output: {
-                    filename: 'script.min.js',
-                },
-            }),
-        )
-        .pipe(gulp.dest(path.dist.js))
-        .pipe(sync.stream())
+    return (
+        gulp
+            .src(path.src.js)
+            .pipe(
+                plumber({
+                    errorHandler: function (err) {
+                        notify.onError({
+                            title: 'JS Error',
+                            message: 'Error: <%= error.message %>',
+                        })(err)
+                        this.emit('end')
+                    },
+                }),
+            )
+            // .pipe(
+            //     webpack({
+            //         mode: isBuild ? 'production' : 'development',
+            //         output: {
+            //             filename: 'script.min.js',
+            //         },
+            //     }),
+            // )
+            .pipe(gulp.dest(path.dist.js))
+            .pipe(sync.stream())
+    )
 }
 
 export const images = () => {

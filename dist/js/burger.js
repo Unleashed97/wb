@@ -1,4 +1,4 @@
-export const handlerBurger = () => {
+const handlerBurger = () => {
     const burger = document.querySelector('.burger')
 
     const sidebar = document.querySelector('.sidebar')
@@ -10,3 +10,5 @@ export const handlerBurger = () => {
         document.body.classList.toggle('fixed')
     })
 }
+
+handlerBurger()
