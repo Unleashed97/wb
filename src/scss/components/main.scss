@@ -66,4 +66,12 @@
             place-content: center;
         }
     }
+
+    // buyout group
+    .nav-tabs {
+        display: flex;
+        gap: 42px;
+
+        margin-bottom: 40px;
+    }
 }

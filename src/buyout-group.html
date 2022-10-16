@@ -8,6 +8,25 @@
 
 <body>
 
+    <div class="modal modal--qr">
+        <div class="modal__inner">
+            <button type="button" id="modal-close" class="btn modal__close">
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.67452 1.09137C8.88605 0.879836 8.88605 0.536871 8.67452 0.325338C8.46299 0.113804 8.12002 0.113804 7.90849 0.325338L4.49984 3.73399L1.09119 0.325338C0.879653 0.113804 0.536688 0.113804 0.325154 0.325338C0.11362 0.536871 0.11362 0.879836 0.325154 1.09137L3.7338 4.50002L0.325155 7.90867C0.11362 8.1202 0.11362 8.46317 0.325155 8.6747C0.536688 8.88624 0.879653 8.88624 1.09119 8.6747L4.49984 5.26605L7.90849 8.6747C8.12002 8.88624 8.46299 8.88624 8.67452 8.6747C8.88605 8.46317 8.88605 8.1202 8.67452 7.90867L5.26587 4.50002L8.67452 1.09137Z"
+                        fill="#464A54" />
+                </svg>
+            </button>
+            <h4 class="modal__title">Оплата по QR-коду (Выкуп №4063)</h4>
+
+            <div class="modal__content">
+                <img src="img/buyout-group/qrcode.jpg" alt="">
+
+                <button type="button" class="btn btn--purple buyout-item-pay-btn">Оплатить</button>
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <!-- header include -->
         @@include('html/partials/header.html')
@@ -36,8 +55,104 @@
                     </div>
 
 
-                    <div class="main__content">
 
+
+                    <div class="main__content">
+                        <div class="nav-tabs">
+                            <button type="button" id="all-btn" class="btn btn--outline">Все <span>(5)</span></button>
+                            <button type="button" id="paid-btn" class="btn btn--outline">Оплаченные</button>
+                            <button type="button" id="unpaid-btn" class="btn btn--outline">Неоплаченные
+                                <span>(5)</span></button>
+                        </div>
+
+                        <div id="all-list" class="buyout__list">
+                            <div class="buyout__item">
+                                <div class="buyout__item-main">
+                                    <img src="img/icons/triangle.png" class="buyout__item-icon" alt="">
+                                    <div class="buyout__item-header">
+                                        <p class="buyout__item-title">Выкуп: №4063 <img src="img/icons/hint.png"
+                                                class="buyout__item-hint-icon" alt=""></p>
+                                        <p class="buyout__item-status">Статус: <span
+                                                class="buyout__item-status-value">Новый</span></p>
+                                    </div>
+
+                                    <div class="buyout__item-main-content">
+                                        <img src="https://via.placeholder.com/41x57" class="buyout__item-image" alt="">
+                                    </div>
+
+                                    <div class="buyout__item-main-controls">
+                                        <button type="button" class="btn btn--purple buyout-item-btn-qr">QR</button>
+                                        <button type="button" class="btn btn--purple buyout-item-btn-map">Карта</button>
+                                    </div>
+                                </div>
+
+                                <div class="buyout__item-content">
+                                    <img src="https://via.placeholder.com/41x57" class="buyout__item-image" alt="">
+
+                                    <span class="buyout__item-art">Арт: 6583968</span>
+
+                                    <p class="buyout__item-name">Ollin Professional / Крем-спрей для волос 15в1, 250мл
+                                    </p>
+
+                                    <span>Нет</span>
+                                    <span>Нет</span>
+
+                                    <span class="buyout__item-price">551 p.</span>
+
+                                    <div class="buyout__item-content-controls">
+                                        <button type="button" class="btn buyout__item-edit">
+                                            <img src="img/icons/edit.svg" alt="">
+                                        </button>
+                                        <button type="button" class="btn buyout__item-remove">
+                                            <img src="img/icons/close.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buyout__item">
+                                <div class="buyout__item-main">
+                                    <img src="img/icons/triangle.png" class="buyout__item-icon" alt="">
+                                    <div class="buyout__item-header">
+                                        <p class="buyout__item-title">Выкуп: №4063 <img src="img/icons/hint.png"
+                                                class="buyout__item-hint-icon" alt=""></p>
+                                        <p class="buyout__item-status">Статус: <span
+                                                class="buyout__item-status-value">Новый</span></p>
+                                    </div>
+
+                                    <div class="buyout__item-main-content">
+                                        <img src="https://via.placeholder.com/41x57" class="buyout__item-image" alt="">
+                                    </div>
+
+                                    <div class="buyout__item-main-controls">
+                                        <button type="button" class="btn btn--purple buyout-item-btn-qr">QR</button>
+                                        <button type="button" class="btn btn--purple buyout-item-btn-map">Карта</button>
+                                    </div>
+                                </div>
+
+                                <div class="buyout__item-content">
+                                    <img src="https://via.placeholder.com/41x57" class="buyout__item-image" alt="">
+
+                                    <span class="buyout__item-art">Арт: 6583968</span>
+
+                                    <p class="buyout__item-name">Ollin Professional / Крем-спрей для волос 15в1, 250мл
+                                    </p>
+
+                                    <span>Нет</span>
+                                    <span>Нет</span>
+
+                                    <span class="buyout__item-price">551 p.</span>
+
+                                    <div class="buyout__item-content-controls">
+                                        <button type="button" class="btn buyout__item-edit">
+                                            <img src="img/icons/edit.svg" alt="">
+                                        </button>
+                                        <button type="button" class="btn buyout__item-remove">
+                                            <img src="img/icons/close.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -48,6 +163,10 @@
         @@include('html/partials/footer.html')
 
     </div>
+
+    <!-- scripts -->
+    <script src="js/buyoutGroup.js"></script>
+    <script src="js/modalQr.js"></script>
 </body>
 
 </html>

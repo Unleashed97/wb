@@ -13,6 +13,17 @@
 
     background-color: rgba(#000, 50%);
 
+    &--qr {
+        .modal__inner {
+            width: fit-content;
+        }
+
+        .buyout-item-pay-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
     &.active {
         display: flex;
     }
