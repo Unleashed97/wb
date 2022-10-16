@@ -36,5 +36,10 @@
     &__btns {
         display: flex;
         gap: 15px;
+
+        .btn--outline {
+            padding: 12px 24px;
+            height: 45px;
+        }
     }
 }
