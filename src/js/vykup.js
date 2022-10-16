@@ -1,3 +1,5 @@
+'use strict'
+
 const handleVykup = () => {
     // items list
     const emptyListBlock = document.querySelector('.vykup__empty-list')
@@ -15,26 +17,99 @@ const handleVykup = () => {
     }
 
     // remove item
-    const removeVykupItemRemoveBtns = document.querySelectorAll(
-        '.vykup__list-item-remove-btn',
+    const removeBtnList = document.getElementsByClassName(
+        'vykup__list-item-remove-btn',
     )
 
-    removeVykupItemRemoveBtns.forEach((removeBtn) =>
-        removeBtn.addEventListener('click', () => {
-            removeBtn.closest('.vykup__list-item').remove()
+    // handle remove item
+    function handleRemove(btn) {
+        btn.closest('.vykup__list-item').remove()
 
-            const vykupListItems = document.querySelectorAll(
-                '.vykup__list > .vykup__list-item',
+        if (removeBtnList.length === 0) {
+            emptyListBlock.classList.add('active')
+            listWrapper.classList.remove('active')
+        }
+
+        sumItemPrice()
+    }
+
+    for (let btn of removeBtnList) {
+        btn.addEventListener('click', () => handleRemove(btn))
+    }
+
+    // copy item
+    const copyBtnList = document.getElementsByClassName(
+        'vykup__list-item-copy-btn',
+    )
+
+    for (let btn of copyBtnList) {
+        function handleCopy(btn) {
+            const vykupItem = btn.closest('.vykup__list-item')
+
+            const duplicate = vykupItem.cloneNode(true)
+
+            // add eventlistener to remove btn of duplicate
+            duplicate
+                .querySelector('.vykup__list-item-remove-btn')
+                .addEventListener('click', () => handleRemove(duplicate))
+
+            // add eventlistener to copy btn of duplicate
+            duplicate
+                .querySelector('.vykup__list-item-copy-btn')
+                .addEventListener('click', () => handleCopy(duplicate))
+
+            // add amount increase listener
+            const amountAddBtn = duplicate.querySelector(
+                '.vykup__list-item-amount-add',
             )
 
-            if (vykupListItems.length === 0) {
-                emptyListBlock.classList.add('active')
-                listWrapper.classList.remove('active')
-            }
+            amountAddBtn.addEventListener('click', () =>
+                handleAmountAddListener(amountAddBtn),
+            )
 
+            // add amount decrease listener
+            const amountRemoveBtn = duplicate.querySelector(
+                '.vykup__list-item-amount-remove',
+            )
+
+            amountRemoveBtn.addEventListener('click', () =>
+                handleAmountRemoveListener(amountRemoveBtn),
+            )
+
+            // add gender listener
+            const genderBlock = duplicate.querySelector('.gender')
+
+            const genderButtons = genderBlock.querySelectorAll('button')
+
+            genderButtons.forEach((btn) =>
+                btn.addEventListener('click', () => handleGender(btn)),
+            )
+
+            vykupItem.after(duplicate)
             sumItemPrice()
-        }),
-    )
+        }
+
+        btn.addEventListener('click', () => handleCopy(btn))
+    }
+
+    // gender
+    const genderBlockList = document.getElementsByClassName('gender')
+
+    function handleGender(btn) {
+        btn.closest('.gender')
+            .querySelectorAll('button')
+            .forEach((btn) => btn.classList.remove('active'))
+
+        btn.classList.add('active')
+    }
+
+    for (let genderBlock of genderBlockList) {
+        const genderButtons = genderBlock.querySelectorAll('button')
+
+        genderButtons.forEach((btn) =>
+            btn.addEventListener('click', () => handleGender(btn)),
+        )
+    }
 
     // amount
     const amountAddBtns = document.querySelectorAll(
@@ -44,29 +119,34 @@ const handleVykup = () => {
         '.vykup__list-item-amount-remove',
     )
 
-    amountAddBtns.forEach((addBtn) =>
-        addBtn.addEventListener('click', () => {
-            const amountValueField = addBtn
-                .closest('.amount')
-                .querySelector('.vykup__list-item-amount')
+    // handle Add amount listener
+    function handleAmountAddListener(addBtn) {
+        const amountValueField = addBtn
+            .closest('.amount')
+            .querySelector('.vykup__list-item-amount')
 
-            amountValueField.innerText = Number(amountValueField.innerText) + 1
-            sumItemPrice()
-        }),
+        amountValueField.innerText = Number(amountValueField.innerText) + 1
+        sumItemPrice()
+    }
+    amountAddBtns.forEach((addBtn) =>
+        addBtn.addEventListener('click', () => handleAmountAddListener(addBtn)),
     )
 
-    amountRemoveBtns.forEach((removeBtn) =>
-        removeBtn.addEventListener('click', () => {
-            const amountValueField = removeBtn
-                .closest('.amount')
-                .querySelector('.vykup__list-item-amount')
+    // handle remove amount listener
+    function handleAmountRemoveListener(removeBtn) {
+        const amountValueField = removeBtn
+            .closest('.amount')
+            .querySelector('.vykup__list-item-amount')
 
-            if (amountValueField.innerText > 1) {
-                amountValueField.innerText =
-                    Number(amountValueField.innerText) - 1
-            }
-            sumItemPrice()
-        }),
+        if (amountValueField.innerText > 1) {
+            amountValueField.innerText = Number(amountValueField.innerText) - 1
+        }
+        sumItemPrice()
+    }
+    amountRemoveBtns.forEach((removeBtn) =>
+        removeBtn.addEventListener('click', () =>
+            handleAmountRemoveListener(removeBtn),
+        ),
     )
 
     function sumItemPrice() {
@@ -101,6 +181,43 @@ const handleVykup = () => {
     }
 
     sumItemPrice()
+
+    // data collection
+    const vykupCreateBtn = document.querySelector('.vykup__create-btn')
+
+    vykupCreateBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const vykupList = document.querySelector('.vykup__list')
+        const vykupItemList =
+            vykupList.getElementsByClassName('vykup__list-item')
+
+        let buyoutGroup = []
+
+        for (let vykupItem of vykupItemList) {
+            let art = vykupItem.querySelector('.vykup__list-item-art').innerText
+            let price = vykupItem
+                .querySelector('.vykup__list-item-price')
+                .innerText.replace(/\D+/g, '')
+
+            let count = vykupItem.querySelector(
+                '.vykup__list-item-amount',
+            ).innerText
+            let gender = vykupItem.querySelector(
+                '.gender > button.active',
+            ).innerText
+
+            let query = vykupItem
+                .querySelector('.vykup__list-item-search-query')
+                .value.trim()
+
+            let pvz
+
+            let size
+
+            buyoutGroup.push({ art, price, count, gender, query })
+        }
+    })
 }
 
 handleVykup()

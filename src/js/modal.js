@@ -1,3 +1,5 @@
+'use strict'
+
 const handleModal = () => {
     const openModalBtn = document.getElementById('controls__form-btn-plus')
     const modal = document.querySelector('.modal')

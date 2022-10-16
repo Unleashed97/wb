@@ -1,3 +1,5 @@
+'use strict'
+
 const handlerBurger = () => {
     const burger = document.querySelector('.burger')
 
