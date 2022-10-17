@@ -74,6 +74,10 @@ img {
     position: fixed;
 }
 
+.hidden {
+    display: none !important;
+}
+
 // components
 @import 'components/container.scss';
 @import 'components/header.scss';

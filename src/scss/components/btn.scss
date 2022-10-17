@@ -98,4 +98,24 @@
         background-color: #e6e6e6;
         border-radius: 15px;
     }
+
+    &--green {
+        width: fit-content;
+        height: fit-content;
+
+        padding: 13px 12px;
+        background: #35b433;
+        color: #fff;
+
+        text-transform: none;
+
+        border-radius: 15px;
+
+        transition: 0.2s linear;
+
+        &:hover {
+            box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+            color: #fff;
+        }
+    }
 }

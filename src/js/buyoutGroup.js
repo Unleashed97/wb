@@ -7,3 +7,5 @@ for (let buyoutItemMain of buyoutItemMainList) {
         buyoutItem.classList.toggle('active')
     })
 }
+
+// status of payment

@@ -137,6 +137,10 @@
         color: rgba(#000, 50%);
     }
 
+    &__item-status-value.pending {
+        color: #ffcd4d;
+    }
+
     &__item-main-content {
         margin-right: auto;
     }

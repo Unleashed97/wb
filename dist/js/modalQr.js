@@ -6,6 +6,22 @@ for (let modalOpenBtn of modalOpenBtnList) {
     modalOpenBtn.addEventListener('click', (e) => {
         e.stopPropagation()
 
+        const buyoutItem = modalOpenBtn.closest('.buyout__item')
+        const status = buyoutItem.querySelector('.buyout__item-status-value')
+
+        status.innerText = 'Ожидание оплаты'
+        status.classList.add('pending')
+
+        const controlsBlock = modalOpenBtn.closest(
+            '.buyout__item-main-controls',
+        )
+        console.log(controlsBlock)
+        controlsBlock.classList.add('hidden')
+
+        buyoutItem
+            .querySelector('.buyout__item-main-controls--pending')
+            .classList.remove('hidden')
+
         modalQr.classList.add('active')
         document.body.classList.add('fixed')
     })
