@@ -141,6 +141,14 @@
         color: #ffcd4d;
     }
 
+    &__item-status-value.paid {
+        color: #6abb00;
+    }
+
+    &__item-status-value.unpaid {
+        color: #cf6e6e;
+    }
+
     &__item-main-content {
         margin-right: auto;
     }
@@ -169,10 +177,8 @@
 }
 
 .buyout__item-main-controls--processing {
-    &.active {
-        img {
-            animation: spin 2s linear infinite;
-        }
+    img {
+        animation: spin 2s linear infinite;
     }
 
     .processing {

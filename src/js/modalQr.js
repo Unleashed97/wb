@@ -1,5 +1,5 @@
 const modalQr = document.querySelector('.modal--qr')
-const modalOpenBtnList = document.querySelectorAll('.buyout-item-btn-qr')
+const modalOpenBtnList = document.getElementsByClassName('buyout-item-btn-qr')
 const modalClose = modalQr.querySelector('.modal__close')
 
 for (let modalOpenBtn of modalOpenBtnList) {
@@ -9,18 +9,30 @@ for (let modalOpenBtn of modalOpenBtnList) {
         const buyoutItem = modalOpenBtn.closest('.buyout__item')
         const status = buyoutItem.querySelector('.buyout__item-status-value')
 
-        status.innerText = 'Ожидание оплаты'
+        status.innerHTML = 'создание'
         status.classList.add('pending')
 
         const controlsBlock = modalOpenBtn.closest(
             '.buyout__item-main-controls',
         )
-        console.log(controlsBlock)
+
         controlsBlock.classList.add('hidden')
 
-        buyoutItem
-            .querySelector('.buyout__item-main-controls--pending')
-            .classList.remove('hidden')
+        const controlsBlockProcessing = buyoutItem.querySelector(
+            '.buyout__item-main-controls--processing',
+        )
+
+        controlsBlockProcessing.classList.remove('hidden')
+
+        setTimeout(() => {
+            controlsBlockProcessing.classList.add('hidden')
+            status.innerText = 'Ожидание оплаты'
+            status.classList.add('pending')
+
+            buyoutItem
+                .querySelector('.buyout__item-main-controls--pending')
+                .classList.remove('hidden')
+        }, 1000)
 
         modalQr.classList.add('active')
         document.body.classList.add('fixed')
@@ -48,10 +60,27 @@ for (let btnPay of btnPayList) {
 
         btnPay.nextElementSibling.innerHTML = 'Проверка оплаты'
 
+        const buyoutControlsPending = btnPay.closest(
+            '.buyout__item-main-controls--pending',
+        )
+
         const buyoutItem = btnPay.closest('.buyout__item')
 
         const status = buyoutItem.querySelector('.buyout__item-status-value')
 
         status.innerText = 'Ожидание оплаты'
+
+        setTimeout(() => {
+            buyoutControlsPending.classList.add('hidden')
+
+            const buyoutControlsPaid = buyoutItem.querySelector(
+                '.buyout__item-main-controls--paid',
+            )
+
+            buyoutControlsPaid.classList.remove('hidden')
+
+            status.innerText = 'Оплачено'
+            status.classList.add('paid')
+        }, 1000)
     })
 }
