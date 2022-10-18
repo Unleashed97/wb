@@ -163,6 +163,28 @@
 
     &__item-content-controls {
         display: flex;
+        justify-content: center;
         gap: 20px;
+    }
+}
+
+.buyout__item-main-controls--processing {
+    &.active {
+        img {
+            animation: spin 2s linear infinite;
+        }
+    }
+
+    .processing {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
     }
 }

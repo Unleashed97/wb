@@ -49,7 +49,7 @@
                             <div class="controls__btns">
                                 <button type="button" class="btn btn--purple">Сортировка: по порядку</button>
                                 <button type="button" class="btn btn--purple">Включить автооплату</button>
-                                <button type="button" class="btn btn--outline">Назад</button>
+                                <a href="index.html" class="btn btn--outline">Назад</a>
                             </div>
                         </div>
                     </div>
@@ -110,16 +110,31 @@
 
                                     <div class="buyout__item-main-controls">
                                         <button type="button" class="btn btn--purple buyout-item-btn-qr">QR</button>
-                                        <button type="button" class="btn btn--purple buyout-item-btn-map">Карта</button>
+                                        <button type="button"
+                                            class="btn btn--purple buyout-item-btn-card">Карта</button>
+                                    </div>
+
+
+
+                                    <div class="buyout__item-main-controls--processing hidden">
+                                        <span class="processing">
+                                            Обработка
+
+                                            <!-- <span class="proce"></span> -->
+                                            <img src="img/icons/processing.png" alt="">
+                                        </span>
                                     </div>
 
                                     <div class="buyout__item-main-controls--pending hidden">
-                                        <button type="button" class="btn btn--green">Оплатить (QR)</button>
+                                        <button type="button" class="btn btn--green buyout-item-btn-pay">Оплатить
+                                            (QR)</button>
                                         <p class="buyout__item-main-time-left">
                                             Осталось
                                             <span>5 мин</span>
                                         </p>
                                     </div>
+
+
 
                                     <div class="buyout__item-main-controls--unpaid hidden">
                                         <button type="button" class="btn btn--purple">Я оплатил</button>

@@ -23,6 +23,11 @@
         }
     }
 
+    &:disabled {
+        background-color: #ddd;
+        color: #ccc;
+    }
+
     svg {
         margin-right: 7px;
     }
